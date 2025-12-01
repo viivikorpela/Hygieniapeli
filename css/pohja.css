@@ -79,3 +79,58 @@ p {
     text-align: left;
     padding-left: 10px;
 }
+
+/* Burger-ikoni oletuksena piilossa */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 30px;
+    height: 4px;
+    background: black;
+    border-radius: 5px;
+}
+
+/* Mobile-versio */
+@media (max-width: 768px) {
+
+    .navbar {
+        justify-content: space-between;
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    /* Näytä burgeri mobiilissa */
+    .burger {
+        display: flex;
+    }
+
+    /* Piilota linkit oletuksena mobiilissa */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #cfeaff;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+        text-align: center;
+    }
+
+    /* Kun open-luokka lisätään → näytä menu */
+    .nav-links.open {
+        display: flex;
+    }
+
+    /* Mobiilissa linkkien tyyli */
+    .nav-item {
+        padding: 15px;
+        font-size: 20px;
+    }
+}
