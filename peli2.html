@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hygieniapeli</title>
-    <link rel="stylesheet" href="css/pohja.css">
-    <script src="js/pohja.js" defer></script>
+    <link rel="stylesheet" href="css/peli2.css">
+    <script src="js/peli2.js" defer></script>
 <head>
 
 <body>
@@ -27,10 +27,51 @@
     </div>
 
     <div class="container">
-        <h1>Tähän tehdään peli 2!</h1>
-        <p></p>
-
+        <h1>Valitse oikea vaihtoehto.</h1>
+        <p>Valitse kuvan tilanteeseen sopiva toimintavaihtoehto</p>
+        <div id="score">Pisteet: 0 </div>
+        
     </div>
+
+    <div class="game-container">
+
+        <div class="questions">
+    
+            <div class="question" data-answer="Pesen kädet lämpimällä vedellä ja saippualla. Kuivaan huolellisesti.">
+                <img src="" alt="Likaiset kädet">
+                <div class="dropzone"></div>
+            </div>
+    
+            <div class="question" data-answer="Yskin hihaan, jotta pöpöt eivät pääse leijumaan ilmaan. Pesen myös kädet!">
+                <img src="" alt="yskittää">
+                <div class="dropzone"></div>
+            </div>
+
+            <div class="question" data-answer="Niistän paperiin ja heitän sen roskikseen. Tämän jälkeen pesen kädet huolellisesti.">
+                <img src="img/roskis.png" alt="nenä vuotaa">
+                <div class="dropzone"></div>
+            </div>
+    
+            <div class="question" data-answer="Pesen hampaat hammasharjalla ja -tahnalla. Lankaan myös hampaiden välit!">
+                <img src="" alt="Likaiset hampaat">
+                <div class="dropzone"></div>
+            </div>
+    
+            <div class="question" data-answer="Käyn suihkussa. Pesen ihon saippualla. Suihkun jälkeen laitan tarvittaessa dödöä eli deodoranttia.">
+                <img src="" alt="Hiki">
+                <div class="dropzone"></div>
+            </div>
+    
+        </div>
+    
+        <div class="answers" id="answerArea">
+        </div>
+    
+    </div>
+    
+    <script src="JS/peli2.js"></script>
+
+    <a href="kooste.html" class="start-btn">Kooste sivulle!</a>
 
     <div class="footer">
         Viivi Korpela<br>
