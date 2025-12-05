@@ -21,3 +21,6 @@ Projektissa huomioidaan tekijänoikeudet mm.:
 -Käytetyt kuvat, fontit ja kirjastot ovat joko avoimen lisenssin alaisia tai hankittu käyttöoikeuden mukaisesti.  
 -Lähteet merkitään asianmukaisella tavalla. 
 -Projektissa ei käytetä luvattomasti tekijänoikeuden alla olevaa sisältöä. 
+
+Project plan:
+[projektisuunnitelma_Ryhmä10.docx](https://github.com/user-attachments/files/23957975/projektisuunnitelma_Ryhma10.docx)
