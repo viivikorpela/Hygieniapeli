@@ -176,20 +176,25 @@ p {
 }
 
 .question img {
-    width: 110px;
+    width: 50%;
     height: auto;
     border-radius: 10px;
 }
 
 .dropzone {
-    width: 160px;
-    height: 55px;
     border: 3px dashed #99b5d1;
     border-radius: 12px;
     background: #f0f7ff;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: auto;
+    min-width: 160px;
+    max-width: 50%;
+    height: auto;
+    min-height: 55px;
+    padding: 12px 20px;
+    text-align: center;
 }
 
 .answers {
