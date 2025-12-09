@@ -54,8 +54,26 @@ document.addEventListener("DOMContentLoaded", () => {
     imgEl.classList.add("card__img");
     front.appendChild(imgEl);
 
+    const cardScore = Number(imgEl.getAttribute("data-score")) || 0;
+    let counted = false;
+
     card.addEventListener("click", () => {
+      const flipped = !card.classList.contains("is-flipped");
       card.classList.add("is-flipped");
+
+      /*pisteiden lasku*/ 
+      if (flipped && !counted) {
+        score += cardScore;
+        counted = true;
+
+        const scoreEl = document.getElementById("score");
+        if (scoreEl){
+          scoreEl.textContent = "Pisteet: " + score;
+        }
+
+        localStorage.setItem("peli1_pisteet", score);
+      }
+
     });
   });
 });
