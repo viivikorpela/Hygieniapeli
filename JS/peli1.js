@@ -39,9 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const back = document.createElement("div");
     back.className = "card__face card__face--back";
 
+    const text = document.createElement("div");
+    text.className = "card__text";
+
+    text.innerHTML = imgEl.getAttribute("data-back");  
+
     inner.appendChild(front);
     inner.appendChild(back);
     card.appendChild(inner);
+    back.appendChild(text);
 
     container.replaceChild(card, imgEl); 
 

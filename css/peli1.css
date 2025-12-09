@@ -111,7 +111,6 @@ p {
     margin: 0 auto;
 }
 
-
 /* Mobile-versio */
 @media (max-width: 768px) {
 
@@ -152,7 +151,6 @@ p {
     }
 }
 
-
 .cards { /* Korttien layout */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -191,6 +189,8 @@ p {
 
 .card__face--back {
   transform: rotateY(180deg);
+  background-color: #cfeaff;
+  border-radius: 20px;
 }
 
 .card__img {
@@ -198,3 +198,9 @@ p {
   height: 100%;
   object-fit: cover;
 }
+
+.card__text { 
+  font-size: 18px; 
+  font-weight: bold; 
+  text-align: center;
+} 
