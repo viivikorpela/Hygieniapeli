@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const scoreEl = document.getElementById("score");
         if (scoreEl){
-          scoreEl.textContent = "Pisteet: " + score;
+          scoreEl.textContent = "Pisteet: " + score + "/6";
         }
 
         localStorage.setItem("peli1_pisteet", score);
