@@ -3,9 +3,9 @@ body {
     font-family: "Comic Sans MS", "Poppins", sans-serif;
     background: white;
     text-align: center;
+    overflow-y: auto;
 }
 
-/* Ylävalikko */
 .navbar {
     background: #cfeaff;
     display: flex;
@@ -24,7 +24,6 @@ body {
     transition: 0.2s;
 }
 
-/* korostus */
 .nav-item.active {
     background: white;
     border: 3px solid #7db9ff;
@@ -36,7 +35,6 @@ body {
     border-radius: 40px;
 }
 
-/* Keskialue */
 .container {
     margin-top: 60px;
 }
@@ -56,7 +54,6 @@ p {
     margin-top: -10px;
 }
 
-/* Aloita peli nappula*/
 .start-btn {
     display: inline-block;
     padding: 20px 60px;
@@ -101,7 +98,6 @@ p {
     border-radius: 5px;
 }
 
-/* Mobile-versio */
 @media (max-width: 768px) {
 
     .navbar {
@@ -137,7 +133,7 @@ p {
     }
 }
 
-
+/* peli jutut alkaa tästä: */
   
   h2 {
     margin-bottom: 10px;
@@ -155,14 +151,15 @@ p {
 .game-container {
     display: flex;
     gap: 40px;
-    padding: 40px;
+    padding: 20px;
+    align-items: flex-start;
 }
 
 .questions {
-    width: 55%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
 }
 
 .question {
@@ -170,15 +167,15 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px;
-    border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .question img {
-    width: 50%;
+    width: 15%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .dropzone {
@@ -189,31 +186,79 @@ p {
     justify-content: center;
     align-items: center;
     width: auto;
-    min-width: 160px;
-    max-width: 50%;
+    min-width: 50%;
+    max-width: 70%;
     height: auto;
-    min-height: 55px;
-    padding: 12px 20px;
+    min-height: 20px;
+    padding: 10px 16px;
     text-align: center;
+    position: relative;
 }
 
 .answers {
-    width: 30%;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 45px;
+    position: relative;
 }
 
 .answer-box {
     background: #d9ecff;
     border: 2px solid #9cc9ff;
-    padding: 12px;
+    padding: 10px;
     border-radius: 12px;
     text-align: center;
     font-weight: bold;
+    font-size: 16px;
     cursor: grab;
+    user-select: none;
 }
 .answer-box:active {
     cursor: grabbing;
     opacity: 0.7;
+}
+
+
+
+@media (max-width: 900px) {
+    .answer-box {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .answer-box {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 600px) {
+    .answer-box {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .answer-box {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .answers {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 770px) {
+    h1 {
+        font-size:x-large;
+    }
+}
+
+@media (max-width: 770px) {
+    p {
+        font-size: medium;
+    }
 }
