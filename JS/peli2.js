@@ -75,7 +75,7 @@ document.querySelectorAll(".dropzone").forEach(zone => {
             zone.style.borderColor = "red";
         }
 
-        scoreDisplay.textContent = "Pisteet: " + score;
+        scoreDisplay.textContent = "Pisteet: " + score + "/5";
         localStorage.setItem("peli2_pisteet", score);
     });
 });

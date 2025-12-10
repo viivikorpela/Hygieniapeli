@@ -25,4 +25,4 @@ const peli2 = localStorage.getItem("peli2_pisteet") || 0;
 const summa = Number(peli1) + Number(peli2);
 
 document.getElementById("kokonaispisteet").textContent =
-  "Pisteet yhteensä: " + summa;
+  "Pisteet yhteensä: " + summa  + "/11";
