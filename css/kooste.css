@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    font-family: "Comic Sans MS", "Poppins", sans-serif;
+    background: white;
+    text-align: center;
+}
+
+/* Ylävalikko */
+.navbar {
+    background: #cfeaff;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 40px;
+    transition: 0.2s;
+}
+
+/* korostus */
+.nav-item.active {
+    background: white;
+    border: 3px solid #7db9ff;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+.nav-item:hover {
+    background: white;
+    border-radius: 40px;
+}
+
+/* Keskialue */
+.container {
+    margin-top: 60px;
+}
+
+.info p {
+    margin-top: 1em;
+    padding: 2em;
+    
+}
+
+h1 {
+    font-size: 32px;
+}
+
+p {
+    font-size: 22px;
+    margin-top: -10px;
+}
+
+.image-container {
+    margin-top: 40px;
+    padding-bottom: 140px;
+}
+
+.image-container img {
+    width: 50%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Aloita peli nappula*/
+.start-btn {
+    display: inline-block;
+    padding: 20px 60px;
+    background: #cfeaff;
+    border-radius: 50px;
+    font-size: 24px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    transition: 0.2s;
+}
+
+.start-btn:hover {
+    background: #b9ddff;
+}
+
+/* Footeri */
+.footer {
+    background: #cfeaff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Burger-ikoni oletuksena piilossa */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 30px;
+    height: 4px;
+    background: black;
+    border-radius: 5px;
+}
+
+/* Mobile-versio */
+@media (max-width: 768px) {
+
+    .navbar {
+        justify-content: space-between;
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    /* Näytä burgeri mobiilissa */
+    .burger {
+        display: flex;
+    }
+
+    /* Piilota linkit oletuksena mobiilissa */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #cfeaff;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+        text-align: center;
+    }
+
+    /* Kun open-luokka lisätään → näytä menu */
+    .nav-links.open {
+        display: flex;
+    }
+
+    /* Mobiilissa linkkien tyyli */
+    .nav-item {
+        padding: 15px;
+        font-size: 20px;
+    }
+}
