@@ -1,11 +1,11 @@
 const currentPage = window.location.pathname.split("/").pop();
-        const links = document.querySelectorAll(".nav-item");
+const links = document.querySelectorAll(".nav-item");
 
-        links.forEach(link => {
-            if (link.getAttribute("href") === currentPage) {
-                link.classList.add("active");
-            }
-        });
+links.forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     const burger = document.getElementById("burger");
@@ -20,6 +20,9 @@ let score = 0;
 
 /*korttien kääntölogiikka*/ 
 document.addEventListener("DOMContentLoaded", () => {
+
+  localStorage.setItem("peli1_pisteet", "0");
+
   const container = document.getElementById("cards");
   if (!container) return;
 
