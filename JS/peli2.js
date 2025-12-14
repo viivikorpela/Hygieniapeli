@@ -50,16 +50,17 @@ answers.forEach(text => {
         draggedItem = e.target;
     });
 
+// ---- MOBILE TOUCH (VARMA RATKAISU) ----
 let startX = 0;
 let startY = 0;
 
 box.addEventListener("touchstart", e => {
-    e.preventDefault();
+    const touch = e.touches[0];
     draggedItem = box;
 
-    const touch = e.touches[0];
-    const rect = box.getBoundingClientRect();
+    document.body.classList.add("no-scroll"); // 🔒 estä scroll
 
+    const rect = box.getBoundingClientRect();
     startX = rect.left;
     startY = rect.top;
 
@@ -71,14 +72,18 @@ box.addEventListener("touchstart", e => {
 
 box.addEventListener("touchmove", e => {
     if (!draggedItem) return;
-    e.preventDefault();
 
     const touch = e.touches[0];
-    draggedItem.style.left = (touch.clientX - draggedItem.offsetWidth / 2) + "px";
-    draggedItem.style.top = (touch.clientY - draggedItem.offsetHeight / 2) + "px";
+
+    draggedItem.style.left =
+        (touch.clientX - draggedItem.offsetWidth / 2) + "px";
+    draggedItem.style.top =
+        (touch.clientY - draggedItem.offsetHeight / 2) + "px";
 });
 
 box.addEventListener("touchend", e => {
+    document.body.classList.remove("no-scroll"); // 🔓 vapauta scroll
+
     if (!draggedItem) return;
 
     const touch = e.changedTouches[0];
