@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let draggedItem = null;
 let score = 0;
+localStorage.setItem("peli2_pisteet", 0);
 
 const scoreDisplay = document.getElementById("score");
 const answerArea = document.getElementById("answerArea");
