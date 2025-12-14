@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 let score = 0;
+localStorage.setItem("peli1_pisteet", 0);
 
 /*korttien kääntölogiikka*/ 
 document.addEventListener("DOMContentLoaded", () => {
