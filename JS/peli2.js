@@ -50,48 +50,61 @@ answers.forEach(text => {
         draggedItem = e.target;
     });
 
-    let offsetX = 0;
-    let offsetY = 0;
+let startX = 0;
+let startY = 0;
 
-    box.addEventListener("touchstart", e => {
-        draggedItem = box;
-        const touch = e.touches[0];
-        const rect = box.getBoundingClientRect();
-        offsetX = touch.clientX - rect.left;
-        offsetY = touch.clientY - rect.top;
+box.addEventListener("touchstart", e => {
+    e.preventDefault();
+    draggedItem = box;
 
-        box.style.position = "absolute";
-        box.style.zIndex = 1000;
+    const touch = e.touches[0];
+    const rect = box.getBoundingClientRect();
+
+    startX = rect.left;
+    startY = rect.top;
+
+    box.style.position = "fixed";
+    box.style.left = rect.left + "px";
+    box.style.top = rect.top + "px";
+    box.style.zIndex = 1000;
+});
+
+box.addEventListener("touchmove", e => {
+    if (!draggedItem) return;
+    e.preventDefault();
+
+    const touch = e.touches[0];
+    draggedItem.style.left = (touch.clientX - draggedItem.offsetWidth / 2) + "px";
+    draggedItem.style.top = (touch.clientY - draggedItem.offsetHeight / 2) + "px";
+});
+
+box.addEventListener("touchend", e => {
+    if (!draggedItem) return;
+
+    const touch = e.changedTouches[0];
+    let dropped = false;
+
+    document.querySelectorAll(".dropzone").forEach(zone => {
+        const rect = zone.getBoundingClientRect();
+
+        if (
+            touch.clientX >= rect.left &&
+            touch.clientX <= rect.right &&
+            touch.clientY >= rect.top &&
+            touch.clientY <= rect.bottom
+        ) {
+            handleDrop(zone);
+            dropped = true;
+        }
     });
 
-    box.addEventListener("touchmove", e => {
-        if (!draggedItem) return;
-        const touch = e.touches[0];
-        box.style.left = (touch.clientX - offsetX) + "px";
-        box.style.top = (touch.clientY - offsetY) + "px";
-    });
+    if (!dropped) {
+        draggedItem.style.left = startX + "px";
+        draggedItem.style.top = startY + "px";
+    }
 
-    box.addEventListener("touchend", e => {
-        if (!draggedItem) return;
-
-        const touch = e.changedTouches[0];
-        const dropzones = document.querySelectorAll(".dropzone");
-
-        dropzones.forEach(zone => {
-            const rect = zone.getBoundingClientRect();
-
-            if (
-                touch.clientX > rect.left &&
-                touch.clientX < rect.right &&
-                touch.clientY > rect.top &&
-                touch.clientY < rect.bottom
-            ) {
-                handleDrop(zone);
-            }
-        });
-
-        draggedItem = null;
-    });
+    draggedItem = null;
+});
 });
 
 document.querySelectorAll(".dropzone").forEach(zone => {
