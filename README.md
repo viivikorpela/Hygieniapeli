@@ -26,3 +26,5 @@ Project plan:
 [projektisuunnitelma_Ryhmä10.docx](https://github.com/user-attachments/files/23957975/projektisuunnitelma_Ryhma10.docx)
 
 Sivuilla käytetyt kuvat tehty Chat GPT:llä ja Microsoft Copilotilla. 
+
+Pelin julkaisulinkki: https://viivikorpela.github.io/Hygieniapeli/index.html
